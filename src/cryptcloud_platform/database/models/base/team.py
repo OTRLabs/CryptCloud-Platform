@@ -6,12 +6,12 @@ from advanced_alchemy.base import SlugKey, UUIDAuditBase
 from sqlalchemy import String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from .team_tag import team_tag
+from ..team_models.team_tag import team_tag
 
 if TYPE_CHECKING:
     from .tag import Tag
-    from .team_invitation import TeamInvitation
-    from .team_member import TeamMember
+    from ..team_models.team_invitation import TeamInvitation
+    from ..team_models.team_member import TeamMember
 
 
 class Team(UUIDAuditBase, SlugKey):

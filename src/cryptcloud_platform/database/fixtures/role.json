@@ -1,0 +1,22 @@
+[
+    {
+       "slug": "observer",
+      "name": "Observer",
+      "description": "Limited access to the application. This role allows you to query and view the application."
+    },
+    {
+       "slug": "user",
+      "name": "User",
+      "description": "Allows access to a namespace in the application."
+    },
+    {
+        "slug": "admin",
+       "name": "Admin",
+       "description": "Allows full access to a namespace in the application."
+    },
+    {
+       "slug": "superuser",
+      "name": "Superuser",
+      "description": "Allows superuser access to manage all namespaces in the application."
+    }
+  ]

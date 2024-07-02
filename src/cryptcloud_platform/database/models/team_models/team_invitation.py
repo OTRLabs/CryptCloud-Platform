@@ -7,11 +7,11 @@ from advanced_alchemy.base import UUIDAuditBase
 from sqlalchemy import ForeignKey, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from .team_roles import TeamRoles
+from ..team_roles import TeamRoles
 
 if TYPE_CHECKING:
-    from .team import Team
-    from .user import User
+    from ..team import Team
+    from ..user import User
 
 
 class TeamInvitation(UUIDAuditBase):

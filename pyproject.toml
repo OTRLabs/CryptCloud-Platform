@@ -5,7 +5,12 @@ description = "Paas 4 Hax0rs"
 authors = [
     {name = "cam", email = "cammclain@skiff.com"},
 ]
-dependencies = []
+dependencies = [
+    "litestar>=2.9.1",
+    "temporalio>=1.6.0",
+    "advanced-alchemy>=0.17.1",
+    "kubernetes>=30.1.0",
+]
 requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "MIT"}

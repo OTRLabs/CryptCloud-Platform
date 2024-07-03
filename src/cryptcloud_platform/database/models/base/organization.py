@@ -6,10 +6,12 @@ from typing import TYPE_CHECKING
 from advanced_alchemy.base import UUIDAuditBase
 from sqlalchemy import String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy_utils import AssociationProxy, association_proxy
 
 if TYPE_CHECKING:
     from ..base.user import User
-    from ..base.tag import Tag
+    #from ..base.tag import Tag
+    from ..organization.organization_tags import OrganizationTag
     
 
 class Organization(UUIDAuditBase):
@@ -25,9 +27,22 @@ class Organization(UUIDAuditBase):
         passive_deletes=True,
         lazy="selectin",
     )
-    tags: Mapped[list[Tag]] = relationship(
+    '''tags: Mapped[list[Tag]] = relationship(
         secondary=lambda: organization_tag,
         back_populates="organizations",
         cascade="all, delete",
         passive_deletes=True,
+    )'''
+    organization_tags: Mapped[list[OrganizationTag]] = relationship(
+        back_populates="organization",
+        cascade="all, delete",
+        passive_deletes=True,
     )
+    created_at: Mapped[datetime] = mapped_column(default=datetime.now)
+    created_by: Mapped[User] = relationship(back_populates="organizations")
+    created_by_name: AssociationProxy[str] = association_proxy("created_by", "name")
+    created_by_email: AssociationProxy[str] = association_proxy("created_by", "email")
+    __pii_columns__ = {"name"}
+    
+    def __repr__(self) -> str:
+        return f"Organization(name={self.name})"

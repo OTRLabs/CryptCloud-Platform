@@ -20,4 +20,18 @@ def create_app() -> Litestar:
     
     from .domain.teams import signals as teams_signals
     
-    from .library.
+    from .library.dependencies import create_collection_dependencies
+    
+    # from .server import openapi, plugins
+    from .server import routers
+    
+    dependencies = {constants.USER_DEPENDENCY_KEY: Provide(provide_user)}
+    dependencies.update(create_collection_dependencies())
+    
+    settings = get_settings()
+    
+    return Litestar(
+        
+        debug=settings.DEBUG,
+        dependencies=dependencies,
+    )

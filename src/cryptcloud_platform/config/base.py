@@ -169,7 +169,32 @@ class DatabaseSettings:
         return self._engine_instance
 
 
-
+@dataclass
+class KubernetesSettings:
+    
+    KUBERNETES_CLUSTER_NAME: str = field(
+        default_factory=lambda: os.environ.get("KUBERNETES_CLUSTER_NAME", "cryptcloud")
+    )
+    
+    KUBERNETES_CLUSTER_API_VERSION: str = field(
+        default_factory=lambda: os.environ.get("KUBERNETES_CLUSTER_API_VERSION", "v1")
+    )
+    
+    KUBERNETES_CLUSTER_IP_RANGE: str = field(
+        default_factory=lambda: os.environ.get("KUBERNETES_CLUSTER_IP_RANGE", "237.84.2.178/16")
+    )
+    
+    KUBERNETES_CLUSTER_NETWORK: str = field(
+        default_factory=lambda: os.environ.get("KUBERNETES_CLUSTER_NETWORK", "237.84.2.178/16")
+    )
+    
+    KUBERNETES_CLUSTER_SERVICE_NETWORK: str = field(
+        default_factory=lambda: os.environ.get("KUBERNETES_CLUSTER_SERVICE_NETWORK", "237.84.2.178/16")
+    )
+    
+    ENABLE_CLOUD_PROVIDER: bool = field(
+        default_factory=lambda: os.environ.get("ENABLE_CLOUD_PROVIDER", "true") in TRUE_VALUES
+    )
 
 @dataclass
 class Settings:

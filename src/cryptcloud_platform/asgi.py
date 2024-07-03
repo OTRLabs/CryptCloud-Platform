@@ -39,6 +39,6 @@ def create_app() -> Litestar:
         dependencies=dependencies,
         
         on_shutdown=[
-            
+            ## add function to kill k8s cluster
             ],
     )

@@ -16,7 +16,7 @@ from litestar.exceptions import PermissionDeniedException
 from ...config import constants
 from ...database.models.base.user import User
 from ...database.models.base.user import UserRole 
-from ...database.models.base.role import Role 
+from ...database.models.base.role import Role
 from ...library import crypt
 
 from .repositories import RoleRepository, UserRepository, UserRoleRepository
@@ -155,27 +155,6 @@ class UserService(SQLAlchemyAsyncRepositoryService[User]):
                 data.update({"hashed_password": await crypt.get_password_hash(password)})
         return await super().to_model(data, operation)
 
-
-class RoleService(SQLAlchemyAsyncRepositoryService[Role]):
-    """Handles database operations for users."""
-
-    repository_type = RoleRepository
-    match_fields = ["name"]
-
-    def __init__(self, **repo_kwargs: Any) -> None:
-        self.repository: RoleRepository = self.repository_type(**repo_kwargs)
-        self.model_type = self.repository.model_type
-
-    async def to_model(self, data: ModelDictT[Role], operation: str | None = None) -> Role:
-        if (is_msgspec_model(data) or is_pydantic_model(data)) and operation == "create" and data.slug is None:  # type: ignore[union-attr]
-            data.slug = await self.repository.get_available_slug(data.name)  # type: ignore[union-attr]
-        if (is_msgspec_model(data) or is_pydantic_model(data)) and operation == "update" and data.slug is None:  # type: ignore[union-attr]
-            data.slug = await self.repository.get_available_slug(data.name)  # type: ignore[union-attr]
-        if is_dict(data) and "slug" not in data and operation == "create":
-            data["slug"] = await self.repository.get_available_slug(data["name"])
-        if is_dict(data) and "slug" not in data and "name" in data and operation == "update":
-            data["slug"] = await self.repository.get_available_slug(data["name"])
-        return await super().to_model(data, operation)
 
 
 class UserRoleService(SQLAlchemyAsyncRepositoryService[UserRole]):

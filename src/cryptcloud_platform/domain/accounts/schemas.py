@@ -6,7 +6,7 @@ import msgspec
 from typing import Optional
 
 from ...database.models.team.team_roles import TeamRoles
-from app.lib.schema import CamelizedBaseStruct
+from ...library.schema import CamelizedBaseStruct
 
 __all__ = (
     "AccountLogin",

@@ -5,6 +5,7 @@ from kubernetes import client, config, watch
 from datetime import datetime
 from kubernetes.client import configuration
 
+from ...config.base import KubernetesSettings
 
 def launch_kubernetes_cluster() -> bool:
     """
@@ -23,15 +24,15 @@ def launch_kubernetes_cluster() -> bool:
 
     # Create an instance of the V1Cluster class
     cluster = client.V1Cluster(
-        metadata=client.V1ObjectMeta(name="new-cluster"),
+        metadata=client.V1ObjectMeta(name=KubernetesSettings.KUBERNETES_CLUSTER_NAME),
         spec=client.V1ClusterSpec(
-            cluster_api_version="v1",
-            cluster_ip_range="10.244.0.0/16",
-            enable_cloud_provider=True,
-            network="flannel",
-            service_network="10.96.0.0/12",
+            cluster_api_version=KubernetesSettings.KUBERNETES_CLUSTER_API_VERSION,
+            cluster_ip_range=KubernetesSettings.KUBERNETES_CLUSTER_IP_RANGE,
+            enable_cloud_provider=KubernetesSettings.ENABLE_CLOUD_PROVIDER,
+            network=KubernetesSettings.KUBERNETES_CLUSTER_NETWORK,
+            service_network=KubernetesSettings.KUBERNETES_CLUSTER_SERVICE_NETWORK,
             provider_config=client.V1ProviderConfig(
-                value="{\"network\":\"10.200.0.0/16\",\"subnetwork\":\"test-subnetwork\"}"
+                value=f'{{"network":"{KubernetesSettings.KUBERNETES_CLUSTER_NETWORK}","subnetwork":"test-subnetwork"}}'
             ),
         ),
     )

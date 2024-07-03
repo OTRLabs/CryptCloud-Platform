@@ -203,6 +203,7 @@ class Settings:
     ## pull in CryptCloud component settings
     # app: AppSettings = field(default_factory=AppSettings)
     database: DatabaseSettings = field(default_factory=DatabaseSettings)
+    k8scluster: KubernetesSettings = field(default_factory=KubernetesSettings)
     # vite: ViteSettings = field(default_factory=ViteSettings)
     # server: ServerSettings = field(default_factory=ServerSettings)
     # saq: SAQSettings = field(default_factory=SAQSettings)

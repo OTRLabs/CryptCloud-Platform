@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import date, datetime
+from datetime import datetime
 from typing import TYPE_CHECKING
 
 from advanced_alchemy.base import UUIDAuditBase

@@ -10,8 +10,8 @@ from sqlalchemy.ext.associationproxy import AssociationProxy, association_proxy
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 if TYPE_CHECKING:
-    from .role import Role
-    from .user import User
+    from ..base.role import Role
+    from ..base.user import User
 
 
 class UserRole(UUIDAuditBase):

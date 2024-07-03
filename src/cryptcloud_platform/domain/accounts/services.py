@@ -14,7 +14,10 @@ from advanced_alchemy.service import (
 from litestar.exceptions import PermissionDeniedException
 
 from app.config import constants
-from appmodels import Role, User, UserRole
+from ...database.models.base.role import Role as RoleModel
+from ...database.models.base.user import User
+from ...database.models.base.user import UserRole 
+Role, User, UserRole
 from app.lib import crypt
 
 from .repositories import RoleRepository, UserRepository, UserRoleRepository

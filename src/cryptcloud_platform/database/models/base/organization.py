@@ -34,11 +34,7 @@ class Organization(UUIDAuditBase):
         cascade="all, delete",
         passive_deletes=True,
     )'''
-    organization_tags: Mapped[list[OrganizationTag]] = relationship(
-        back_populates="organization",
-        cascade="all, delete",
-        passive_deletes=True,
-    )
+
     created_at: Mapped[datetime] = mapped_column(default=datetime.now)
     created_by: Mapped[User] = relationship(back_populates="organizations")
     created_by_name: AssociationProxy[str] = association_proxy("created_by", "name")

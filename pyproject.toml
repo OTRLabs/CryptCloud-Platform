@@ -18,7 +18,7 @@ dependencies = [
     "logging>=0.4.9.6",
     "litestar-saq>=0.1.21",
     "sporestack>=13.0.0",
-    "sqlalchemy-utils>=0.41.2",
+    "sqlalchemy-utils[full]>=0.41.2",
     "slugify>=0.0.1",
 ]
 requires-python = ">=3.10"

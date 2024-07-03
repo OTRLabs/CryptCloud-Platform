@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.2"
-content_hash = "sha256:5acb239f8403569f50030fa583d3565f8bd515ec499bd551b6c360e051427343"
+content_hash = "sha256:f33b0366653112456a2fd972e93ca0aee801377d7da33e77c542750f556b3801"
 
 [[package]]
 name = "advanced-alchemy"
@@ -246,15 +246,6 @@ files = [
     {file = "fast_query_parsers-1.0.3-cp38-abi3-win32.whl", hash = "sha256:14b3fab7e9a6ac1c1efaf66c3fd2a3fd1e25ede03ed14118035e530433830a11"},
     {file = "fast_query_parsers-1.0.3-cp38-abi3-win_amd64.whl", hash = "sha256:21ae5f3a209aee7d3b84bdcdb33dd79f39fc8cb608b3ae8cfcb78123758c1a16"},
     {file = "fast_query_parsers-1.0.3.tar.gz", hash = "sha256:5200a9e02997ad51d4d76a60ea1b256a68a184b04359540eb6310a15013df68f"},
-]
-
-[[package]]
-name = "functools"
-version = "0.5"
-summary = "Fast tools for functional programming"
-groups = ["default"]
-files = [
-    {file = "functools-0.5.tar.gz", hash = "sha256:596ed8999dee419c0749a41bfdd82e4697e80ea27ee01c716003ef55be9a54c5"},
 ]
 
 [[package]]

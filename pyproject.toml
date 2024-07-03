@@ -17,7 +17,6 @@ dependencies = [
     "geoalchemy>=0.7.2",
     "logging>=0.4.9.6",
     "litestar-saq>=0.1.21",
-    "functools>=0.5",
 ]
 requires-python = ">=3.10"
 readme = "README.md"

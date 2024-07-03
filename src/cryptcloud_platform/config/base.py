@@ -8,7 +8,7 @@ from litestar.utils.module_loader import module_to_os_path
 from advanced_alchemy.utils.text import slugify
 from litestar.serialization import decode_json, encode_json
 from litestar.utils.module_loader import module_to_os_path
-from redis.asyncio import Redis
+#from redis.asyncio import Redis
 from sqlalchemy import event
 from sqlalchemy.ext.asyncio import AsyncEngine, create_async_engine
 from sqlalchemy.pool import NullPool
@@ -177,7 +177,7 @@ class Settings:
     print("Loading settings")
     ## pull in CryptCloud component settings
     # app: AppSettings = field(default_factory=AppSettings)
-    # database: DatabaseSettings = field(default_factory=DatabaseSettings)
+    database: DatabaseSettings = field(default_factory=DatabaseSettings)
     # vite: ViteSettings = field(default_factory=ViteSettings)
     # server: ServerSettings = field(default_factory=ServerSettings)
     # saq: SAQSettings = field(default_factory=SAQSettings)

@@ -11,7 +11,7 @@ if TYPE_CHECKING:
     
     from ..team.team_member import TeamMember
     from ..user.user_role import UserRole
-
+    from ..user.user_contact_info import UserContactInfo
 
 class User(UUIDAuditBase):
     __tablename__ = "user_account"
@@ -31,7 +31,12 @@ class User(UUIDAuditBase):
     # -----------
     # ORM Relationships
     # ------------
-
+    contact_info: Mapped[list[UserContactInfo]] = relationship(
+        back_populates="user",
+        lazy="selectin",
+        uselist=True,
+        cascade="all, delete",
+    )
     roles: Mapped[list[UserRole]] = relationship(
         back_populates="user",
         lazy="selectin",

@@ -32,6 +32,13 @@ def create_app() -> Litestar:
     
     return Litestar(
         
+        on_startup=[
+            
+        ],
         debug=settings.DEBUG,
         dependencies=dependencies,
+        
+        on_shutdown=[
+            
+            ],
     )

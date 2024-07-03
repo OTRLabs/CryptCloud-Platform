@@ -47,6 +47,6 @@ class Tag(UUIDAuditBase, SlugKey, UniqueMixin):
 
 
 def _team_tag() -> Table:
-    from ..team_models.team_tag import team_tag
+    from ..team.team_tag import team_tag
 
     return team_tag

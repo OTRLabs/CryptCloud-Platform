@@ -6,7 +6,7 @@ from advanced_alchemy.mixins import UniqueMixin
 
 # import slugify
 
-from slugify import slugify
+#from slugify import slugify
 
 from advanced_alchemy.base import UUIDAuditBase
 from sqlalchemy import ForeignKey, String, UniqueConstraint

@@ -8,11 +8,12 @@ from sqlalchemy import ForeignKey, String, UniqueConstraint
 from sqlalchemy.ext.associationproxy import AssociationProxy, association_proxy
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from .organization_roles import OrganizationRoles
+from .organization_roles import OrganizationRole
 
 if TYPE_CHECKING:
     from ..base.team import Team
-    from ..user import User
+    from ..base.organization import Organization
+    #from ..user import User
 
 
 class OrganizationTeam(UUIDAuditBase):
@@ -20,9 +21,9 @@ class OrganizationTeam(UUIDAuditBase):
     __table_args__ = (UniqueConstraint("organization_id", "team_id"),)
     organization_id: Mapped[UUID] = mapped_column(ForeignKey("organization.id", ondelete="cascade"), nullable=False)
     team_id: Mapped[UUID] = mapped_column(ForeignKey("team.id", ondelete="cascade"), nullable=False)
-    role: Mapped[OrganizationRoles] = mapped_column(
+    role: Mapped[OrganizationRole] = mapped_column(
         String(length=50),
-        default=OrganizationRoles.MEMBER,
+        default=OrganizationRole.MEMBER,
         nullable=False,
         index=True,
     )

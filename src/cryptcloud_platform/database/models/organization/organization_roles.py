@@ -24,10 +24,11 @@ class OrganizationRole(UUIDAuditBase):
     """Represents a role within an organization."""
 
     __tablename__ = "organization_roles"
-
+    MEMBER = "MEMBER"
+    ADMIN = "ADMIN"
+    
     name = Column(String(50), unique=True, nullable=False, index=True)
-
-    @property
-    def __repr__(self):
-        return f"<OrganizationRole(name={self.name})>"
-
+    
+    def __repr__(self) -> str:
+        return f"{self.name}"
+    

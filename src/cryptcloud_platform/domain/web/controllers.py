@@ -3,8 +3,7 @@ from litestar.response import Template
 from litestar.status_codes import HTTP_200_OK
 
 
-from app.config import constants
-
+from ...config import constants 
 
 class WebController(Controller):
     """Web Controller"""

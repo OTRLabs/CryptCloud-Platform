@@ -6,12 +6,12 @@ from typing import TYPE_CHECKING
 
 ## Import Controllers ##
 
-# from app.fgjgksgjdfk whatever import
+from ..domain.web.controllers import WebController
 
 if TYPE_CHECKING:
     from litestar.types import ControllerRouterHandler
     
 route_handlers: list[ControllerRouterHandler] = [
-    
+    WebController,
     # Controllers
 ]

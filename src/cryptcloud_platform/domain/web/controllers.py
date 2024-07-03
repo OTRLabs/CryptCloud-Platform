@@ -20,4 +20,4 @@ class WebController(Controller):
     )
     async def index(self, path: str | None = None) -> Template:
         """Serve site root"""
-        return Template(template_name=)
+        return Template(template_name="templates/site/index.html.j2")

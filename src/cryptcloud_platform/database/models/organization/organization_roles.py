@@ -15,35 +15,19 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 
 
-if TYPE_CHECKING:
-    from ..base.team import Team
-    from ..user import User
+from sqlalchemy import Column, String
+from sqlalchemy.orm import relationship
 
 
-class OrganizationRoles(UUIDAuditBase):
-    """Organization Roles."""
+
+class OrganizationRole(UUIDAuditBase):
+    """Represents a role within an organization."""
 
     __tablename__ = "organization_roles"
-    name: Mapped[str] = mapped_column(String(length=50), nullable=False, index=True)
-    __table_args__ = (UniqueConstraint("name"),)
 
-    def __repr__(self) -> str:
-        return f"{self.name}"
+    name = Column(String(50), unique=True, nullable=False, index=True)
 
     @property
-    def slug(self) -> str:
-        return slugify(self.name)
+    def __repr__(self):
+        return f"<OrganizationRole(name={self.name})>"
 
-    @property
-    def description(self) -> str:
-        return self.name
-
-    @property
-    def users(self) -> AssociationProxy[list[User], User]:
-        return association_proxy("organization", "users")
-
-    @property
-    def teams(self) -> AssociationProxy[list[Team], Team]:
-        return association_proxy("organization", "teams")
-    
-    

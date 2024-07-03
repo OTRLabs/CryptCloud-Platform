@@ -6,7 +6,7 @@ authors = [
     {name = "cam", email = "cammclain@skiff.com"},
 ]
 dependencies = [
-    "litestar[standard]>=2.9.1",
+    "litestar[types]>=2.9.1",
     "temporalio>=1.6.0",
     "advanced-alchemy>=0.17.1",
     "kubernetes>=30.1.0",
@@ -17,6 +17,7 @@ dependencies = [
     "geoalchemy>=0.7.2",
     "logging>=0.4.9.6",
     "litestar-saq>=0.1.21",
+    "sporestack>=13.0.0",
 ]
 requires-python = ">=3.10"
 readme = "README.md"

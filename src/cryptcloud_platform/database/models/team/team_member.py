@@ -12,7 +12,7 @@ from .team_roles import TeamRoles
 
 if TYPE_CHECKING:
     from ..base.team import Team
-    from ..user import User
+    from ..base.user import User
 
 
 class TeamMember(UUIDAuditBase):

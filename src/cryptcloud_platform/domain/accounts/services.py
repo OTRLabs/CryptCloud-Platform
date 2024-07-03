@@ -17,8 +17,7 @@ from ...config import constants
 from ...database.models.base.user import User
 from ...database.models.base.user import UserRole 
 from ...database.models.base.role import Role 
-UserRole
-from app.lib import crypt
+from ...library import crypt
 
 from .repositories import RoleRepository, UserRepository, UserRoleRepository
 

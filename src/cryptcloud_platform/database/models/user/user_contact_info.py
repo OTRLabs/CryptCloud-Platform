@@ -6,7 +6,7 @@ from uuid import UUID  # noqa: TCH003
 from advanced_alchemy.base import UUIDAuditBase
 from sqlalchemy import String, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from sqlalchemy.ext.associationproxy import AssociationProxy, association_proxy
+#from sqlalchemy.ext.associationproxy import AssociationProxy, association_proxy
 
 if TYPE_CHECKING:
     from ..base.user import User

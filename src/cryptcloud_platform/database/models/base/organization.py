@@ -6,7 +6,10 @@ from typing import TYPE_CHECKING
 from advanced_alchemy.base import UUIDAuditBase
 from sqlalchemy import String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from sqlalchemy_utils import AssociationProxy, association_proxy
+
+from sqlalchemy.ext.associationproxy import association_proxy
+from sqlalchemy.ext.associationproxy import AssociationProxy
+
 
 if TYPE_CHECKING:
     from ..base.user import User

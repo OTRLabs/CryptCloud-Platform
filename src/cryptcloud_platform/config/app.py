@@ -15,7 +15,7 @@ from litestar.logging.config import LoggingConfig, StructLoggingConfig
 from litestar.middleware.logging import LoggingMiddlewareConfig
 from litestar.plugins.structlog import StructlogConfig
 from litestar_saq import CronJob, QueueConfig, SAQConfig
-from litestar_vite import ViteConfig
+#from litestar_vite import ViteConfig
 
 
 from .base import get_settings
@@ -23,15 +23,17 @@ from .base import get_settings
 settings = get_settings()
 
 alchemy = SQLAlchemyAsyncConfig(
-    engine_instance=settings.db.get_engine(),
+    engine_instance=settings.database.get_engine(),
     before_send_handler=async_autocommit_before_send_handler,
     session_config=AsyncSessionConfig(expire_on_commit=False),
     alembic_config=AlembicAsyncConfig(
-        version_table_name=settings.db.MIGRATION_DDL_VERSION_TABLE,
-        script_config=settings.db.MIGRATION_CONFIG,
-        script_location=settings.db.MIGRATION_PATH,
+        version_table_name=settings.database.MIGRATION_DDL_VERSION_TABLE,
+        script_config=settings.database.MIGRATION_CONFIG,
+        script_location=settings.database.MIGRATION_PATH,
     ),
 )
+
+
 '''vite = ViteConfig(
     bundle_dir=settings.vite.BUNDLE_DIR,
     resource_dir=settings.vite.RESOURCE_DIR,

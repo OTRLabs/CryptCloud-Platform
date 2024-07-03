@@ -18,7 +18,7 @@ def create_app() -> Litestar:
     from .domain.accounts.dependencies import provide_user
     from .domain.accounts.guards import auth
     
-    from .domain.teams import signals as teams_signals
+    #from .domain.teams import signals as teams_signals
     
     from .library.dependencies import create_collection_dependencies
     

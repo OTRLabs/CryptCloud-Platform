@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING
 import structlog
 from litestar.events import listener
 
-from app.config.app import alchemy
+from ...config.app import alchemy
 
 from .dependencies import provide_users_service
 

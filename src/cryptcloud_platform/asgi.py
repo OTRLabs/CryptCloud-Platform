@@ -1,0 +1,23 @@
+from __future__ import annotations
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from litestar import Litestar
+
+def create_app() -> Litestar:
+    '''create the asgi app'''
+    
+    from litestar import Litestar
+    from litestar.di import Provide
+    
+    from .config import app as config
+    
+    from .config import constants
+    from .config.base import get_settings
+    
+    from .domain.accounts import signals as accounts_signals
+    from .domain.accounts.dependencies import provide_user
+    from .domain.accounts.guards import auth
+    
+    from .domain.teams import signals as teams_signals
+    
+    from .library.

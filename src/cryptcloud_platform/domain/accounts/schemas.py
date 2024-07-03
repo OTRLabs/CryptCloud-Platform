@@ -5,7 +5,7 @@ from uuid import UUID  # noqa: TCH003
 import msgspec
 from typing import Optional
 
-from app.db.models.team_roles import TeamRoles
+from ...database.models.team.team_roles import TeamRoles
 from app.lib.schema import CamelizedBaseStruct
 
 __all__ = (

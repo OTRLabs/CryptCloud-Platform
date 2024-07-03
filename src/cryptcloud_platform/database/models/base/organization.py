@@ -11,7 +11,8 @@ from sqlalchemy_utils import AssociationProxy, association_proxy
 if TYPE_CHECKING:
     from ..base.user import User
     #from ..base.tag import Tag
-    from ..organization.organization_tags import OrganizationTag
+    
+    
     
 
 class Organization(UUIDAuditBase):

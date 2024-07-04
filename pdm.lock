@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.2"
-content_hash = "sha256:a3643e6ff2a519114a134bca75e865ac06def799f2fff02a6a40872ab110f281"
+content_hash = "sha256:7d00251e09a2bb9841766c20129e81a70a73e9f152f58e3c2fd82128af355eb3"
 
 [[package]]
 name = "advanced-alchemy"
@@ -37,15 +37,6 @@ dependencies = [
 files = [
     {file = "advanced_alchemy-0.17.1-py3-none-any.whl", hash = "sha256:a48d2702e430febd277dc66c0959ce0fbd85eb475a625ec5999b88688bb36167"},
     {file = "advanced_alchemy-0.17.1.tar.gz", hash = "sha256:3bee29096c1b9cea4102e7366c6d8685a51030d078778a6748f8e4c43013ab81"},
-]
-
-[[package]]
-name = "airflow"
-version = "0.6"
-summary = ""
-groups = ["default"]
-files = [
-    {file = "airflow-0.6.tar.gz", hash = "sha256:a54d363e92af87c2ff40ac4c22944106cb8afbc2d8d09aba85e390b68ba01d97"},
 ]
 
 [[package]]
@@ -90,6 +81,15 @@ dependencies = [
 files = [
     {file = "anyio-4.4.0-py3-none-any.whl", hash = "sha256:c1b2d8f46a8a812513012e1107cb0e68c17159a7a594208005a57dc776e1bdc7"},
     {file = "anyio-4.4.0.tar.gz", hash = "sha256:5aadc6a1bbb7cdb0bede386cac5e2940f5e2ff3aa20277e991cf028e0585ce94"},
+]
+
+[[package]]
+name = "apache-airflow"
+version = "1.10.0"
+summary = ""
+groups = ["default"]
+files = [
+    {file = "apache-airflow-1.10.0.tar.gz", hash = "sha256:9e02942386a6be868a339f238133f3e65a62dc8df713f0eca861689db51a4a4a"},
 ]
 
 [[package]]

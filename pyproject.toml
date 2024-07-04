@@ -26,7 +26,7 @@ dependencies = [
     "pick>=2.3.2",
     "litestar-granian>=0.5.0",
     "litestar-vite>=0.1.22",
-    "airflow>=0.6",
+    "apache-airflow>=1.10.0",
 ]
 requires-python = ">=3.10"
 readme = "README.md"

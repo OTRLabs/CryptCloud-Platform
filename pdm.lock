@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.2"
-content_hash = "sha256:42bd8ee9cdfc2309f39796948d17adf3b5c10557804661aa05116b8f6baddb3e"
+content_hash = "sha256:a3643e6ff2a519114a134bca75e865ac06def799f2fff02a6a40872ab110f281"
 
 [[package]]
 name = "advanced-alchemy"
@@ -37,6 +37,15 @@ dependencies = [
 files = [
     {file = "advanced_alchemy-0.17.1-py3-none-any.whl", hash = "sha256:a48d2702e430febd277dc66c0959ce0fbd85eb475a625ec5999b88688bb36167"},
     {file = "advanced_alchemy-0.17.1.tar.gz", hash = "sha256:3bee29096c1b9cea4102e7366c6d8685a51030d078778a6748f8e4c43013ab81"},
+]
+
+[[package]]
+name = "airflow"
+version = "0.6"
+summary = ""
+groups = ["default"]
+files = [
+    {file = "airflow-0.6.tar.gz", hash = "sha256:a54d363e92af87c2ff40ac4c22944106cb8afbc2d8d09aba85e390b68ba01d97"},
 ]
 
 [[package]]

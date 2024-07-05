@@ -1,0 +1,19 @@
+[project]
+name = "CryptCloud-Platform"
+version = "0.0.2"
+description = "Default template for PDM package"
+authors = [
+    {name = "cam", email = "cammclain@skiff.com"},
+]
+dependencies = []
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "Apache-2"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true

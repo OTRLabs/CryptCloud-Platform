@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"cryptcloud/internal/config"
+	"cryptcloud/internal/db"
 	"cryptcloud/internal/logging"
 	"errors"
 	"log"
@@ -23,6 +24,11 @@ func run(err error) {
 	// load config
 	config, err := config.LoadConfig()
 	if err != nil {
+		return
+	}
+
+	// Set up database.
+	if err = db.GetDatabase(ctx, config); err != nil {
 		return
 	}
 

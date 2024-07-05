@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"cryptcloud/internal/config"
 	"cryptcloud/internal/logging"
 	"errors"
 	"log"
@@ -18,6 +19,12 @@ func main() {
 func run(err error) {
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt)
 	defer stop()
+
+	// load config
+	config, err := config.LoadConfig()
+	if err != nil {
+		return
+	}
 
 	// Set up OpenTelemetry.
 	otelShutdown, err := logging.SetupOTelSDK(ctx)

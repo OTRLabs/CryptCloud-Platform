@@ -9,7 +9,14 @@ import (
 	_ "github.com/lib/pq"
 )
 
-func GetDatabase(ctx context.Context, config *config.Config) *ent.Client {
+func GetDatabase(ctx context.Context) *ent.Client {
+
+	// Load config
+	config, err := config.GetConfig()
+	if err != nil {
+		log.Fatalf("failed to load config: %v", err)
+	}
+
 	// Create client
 	ctx = context.Background()
 

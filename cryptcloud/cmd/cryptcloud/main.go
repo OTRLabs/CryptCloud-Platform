@@ -9,6 +9,9 @@ import (
 	"log"
 	"os"
 	"os/signal"
+
+	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi/v5/middleware"
 )
 
 func main() {
@@ -41,5 +44,9 @@ func run(err error) {
 	defer func() {
 		err = errors.Join(err, otelShutdown(context.Background()))
 	}()
+
+	// Set up router.
+	chiRouter := chi.NewRouter()
+	chiRouter.Use(middleware.Logger)
 
 }

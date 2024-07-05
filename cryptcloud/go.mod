@@ -3,6 +3,7 @@ module cryptcloud
 go 1.22.3
 
 require (
+	github.com/caarlos0/env/v11 v11.1.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/facebookgo/clock v0.0.0-20150410010913-600d898af40a // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
